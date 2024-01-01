@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class BEE1028 {
+
+	public static void main(String[] args) 
+	{
+		Scanner teclado = new Scanner(System.in);
+		
+		int qtde = teclado.nextInt();
+		int[] a = new int[qtde], b = new int[qtde], mmc = new int[qtde];
+		
+		for (int i = 0; i < qtde; i++)
+		{
+			a[i] = teclado.nextInt();
+			b[i] = teclado.nextInt();
+			
+			if (b[i] > a[i])
+			{
+				for (int j = 1; j <= a[i]; j++)
+				{
+					if (b[i] % j == 0 && a[i] % j == 0)
+					{
+						mmc[i] = j;
+					}
+				}
+			}
+			
+			else
+			{
+				for (int j = 1; j <= b[i]; j++)
+				{
+					if (b[i] % j == 0 && a[i] % j == 0)
+					{
+						mmc[i] = j;
+					}
+				}
+			}	
+		}
+		
+		for (int i = 0; i < qtde; i++)
+		{
+			System.out.println(mmc[i]);
+		}
+		
+		
+		teclado.close();
+	}
+
+}
